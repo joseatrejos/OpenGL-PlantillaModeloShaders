@@ -28,10 +28,3 @@ private:
 	void verificarCompilacion(GLuint id);
 	void verificarVinculacion(GLuint id);
 };
-
-/*
-void main()
-{
-	
-}
-*/

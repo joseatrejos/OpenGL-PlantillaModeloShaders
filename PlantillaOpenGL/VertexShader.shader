@@ -2,8 +2,11 @@
 #version 330 core
 
 // Atributos de entrada (vienen desde c++)
-in vec3 posicion;
+in vec4 posicion;
 in vec4 color;
+
+// Uniforms
+uniform mat4 transformaciones;
 
 // Atributos de salida (van hacia el fragment shader)
 out vec4 fragmentColor;
@@ -13,8 +16,7 @@ void main()
 {
 	// Es la posición de salida del vértice
 	// Es del tipo vec4 (necesita posicion en 'x', 'y', 'z' y 'w')
-	gl_Position.xyz = posicion;
-	gl_Position.w = 1.0;
+	gl_Position = transformaciones * posicion;
 
 	// Establecer valores de atributos de salida
 	fragmentColor = color;

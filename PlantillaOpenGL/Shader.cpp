@@ -8,6 +8,7 @@ GLuint Shader::getID()
 
 Shader::Shader(const char* rutaVertex, const char* rutaFragment)
 {
+	// Guardar en variables el texto de los codigos de los shaders
 	string codigoVertexShader;
 	ifstream vertexShaderStream(rutaVertex, ios::in);
 	if (vertexShaderStream.is_open())
